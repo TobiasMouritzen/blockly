@@ -356,6 +356,7 @@ export class FieldColour extends Field<string> {
     const colour = cell && cell.getAttribute('data-colour');
     if (colour !== null) {
       this.setValue(colour);
+      this.applyColour();
       dropDownDiv.hideIfOwner(this);
     }
   }
@@ -389,6 +390,7 @@ export class FieldColour extends Field<string> {
           const colour = highlighted.getAttribute('data-colour');
           if (colour !== null) {
             this.setValue(colour);
+            this.applyColour();
           }
         }
         dropDownDiv.hideWithoutAnimation();
